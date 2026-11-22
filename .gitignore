@@ -1,0 +1,30 @@
+# Game-derived files never belong in this repository
+/assets/
+/captures/
+/logs/
+/ui-map/
+/templates/**/*.png
+/templates/**/*.jpg
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Your local state, tokens and browser profile
+/data/*
+!/data/skills.json
+!/data/portrait_names.json
+
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+.venv/
+venv/
+.env
+.env.*
+.vscode/
+.idea/
+.claude/
+Thumbs.db
+desktop.ini

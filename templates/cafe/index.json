@@ -1,0 +1,52 @@
+{
+  "earnings_label": {
+    "file": "earnings_label.png",
+    "region": [
+      1655,
+      915,
+      1870,
+      1010
+    ],
+    "threshold": 0.88
+  },
+  "invite_label": {
+    "file": "invite_label.png",
+    "region": [
+      1262,
+      980,
+      1395,
+      1066
+    ],
+    "threshold": 0.88
+  },
+  "earn_claim_off": {
+    "file": "earn_claim_off.png",
+    "region": [
+      788,
+      720,
+      1137,
+      880
+    ],
+    "threshold": 0.9
+  },
+  "pill_digit_2": {
+    "file": "pill_digit_2.png",
+    "region": [
+      297,
+      114,
+      331,
+      204
+    ],
+    "threshold": 0.9
+  },
+  "pill_digit_1": {
+    "file": "pill_digit_1.png",
+    "region": [
+      297,
+      114,
+      331,
+      204
+    ],
+    "threshold": 0.9
+  }
+}

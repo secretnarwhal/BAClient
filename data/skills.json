@@ -1,0 +1,6 @@
+{
+ "version": 1,
+ "note": "Only what was read from the game. target 'unknown' means not verified yet, and the policy won't guess at it.",
+ "team": [],
+ "students": {}
+}

@@ -1,0 +1,22 @@
+{
+  "notice": {
+    "file": "notice.png",
+    "region": [
+      16,
+      822,
+      186,
+      926
+    ],
+    "threshold": 0.8
+  },
+  "menu": {
+    "file": "menu.png",
+    "region": [
+      16,
+      906,
+      180,
+      1010
+    ],
+    "threshold": 0.8
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cafes": [1, 2],
+  "headpat": true,
+  "invite": {
+    "enabled": false,
+    "students": [],
+    "fallback_lowest_bond": false
+  }
+}

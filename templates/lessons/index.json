@@ -1,0 +1,32 @@
+{
+  "start_lesson": {
+    "file": "start_lesson.png",
+    "region": [
+      785,
+      778,
+      1135,
+      888
+    ],
+    "threshold": 0.85
+  },
+  "all_locations": {
+    "file": "all_locations.png",
+    "region": [
+      1600,
+      942,
+      1895,
+      1046
+    ],
+    "threshold": 0.85
+  },
+  "tickets_owned": {
+    "file": "tickets_owned.png",
+    "region": [
+      55,
+      110,
+      385,
+      208
+    ],
+    "threshold": 0.8
+  }
+}

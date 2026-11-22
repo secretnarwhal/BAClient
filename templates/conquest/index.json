@@ -1,0 +1,112 @@
+{
+  "title": {
+    "file": "title.png",
+    "region": [
+      146,
+      4,
+      362,
+      76
+    ],
+    "threshold": 0.8
+  },
+  "manage_ark": {
+    "file": "manage_ark.png",
+    "region": [
+      1624,
+      960,
+      1874,
+      1034
+    ],
+    "threshold": 0.8
+  },
+  "start_battle": {
+    "file": "start_battle.png",
+    "region": [
+      736,
+      670,
+      1202,
+      900
+    ],
+    "threshold": 0.8
+  },
+  "occupy_base": {
+    "file": "occupy_base.png",
+    "region": [
+      682,
+      100,
+      1238,
+      406
+    ],
+    "threshold": 0.8
+  },
+  "sword": {
+    "file": "sword.png",
+    "region": [
+      388,
+      0,
+      1840,
+      1080
+    ],
+    "threshold": 0.88
+  },
+  "flag": {
+    "file": "flag.png",
+    "region": [
+      316,
+      0,
+      1768,
+      1080
+    ],
+    "threshold": 0.88
+  },
+  "boss": {
+    "file": "boss.png",
+    "region": [
+      550,
+      0,
+      1452,
+      778
+    ],
+    "threshold": 0.6
+  },
+  "leader": {
+    "file": "leader.png",
+    "region": [
+      734,
+      0,
+      1836,
+      972
+    ],
+    "threshold": 0.6
+  },
+  "badge_3": {
+    "file": "badge_3.png",
+    "region": [
+      631,
+      20,
+      1907,
+      1080
+    ],
+    "threshold": 0.72
+  },
+  "badge_1": {
+    "file": "badge_1.png",
+    "region": [
+      271,
+      0,
+      1547,
+      1080
+    ],
+    "threshold": 0.72
+  },
+  "close_x": {
+    "file": "close_x.png",
+    "region": [
+      1292,
+      142,
+      1518,
+      366
+    ],
+    "threshold": 0.8
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_help": {
+    "students": "Who you want to raise, by the name shown in game, like \"Hina\": 5. Weight 0 ignores a student. Variants are separate students: \"Hoshino\" doesn't cover \"Hoshino (Swimsuit)\". A student the plan shows by a code like CH0176 must be listed by that code.",
+    "default_weight": "Value of an owned student who isn't listed.",
+    "locations": "allow: only these locations (empty means all). block: never these.",
+    "fill_leftover_tickets": "After every room with a student worth raising, spend remaining tickets on other rooms for their rewards."
+  },
+  "students": {},
+  "default_weight": 1,
+  "locations": {
+    "allow": [],
+    "block": []
+  },
+  "fill_leftover_tickets": true
+}

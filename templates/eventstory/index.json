@@ -1,0 +1,22 @@
+{
+  "es_tab_story_off": {
+    "file": "es_tab_story_off.png",
+    "region": [
+      0,
+      272,
+      255,
+      400
+    ],
+    "threshold": 0.88
+  },
+  "es_tab_progress_on": {
+    "file": "es_tab_progress_on.png",
+    "region": [
+      0,
+      152,
+      262,
+      278
+    ],
+    "threshold": 0.88
+  }
+}

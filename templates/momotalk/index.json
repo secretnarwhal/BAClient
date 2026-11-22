@@ -1,0 +1,32 @@
+{
+  "mt_tab_messages_off": {
+    "file": "mt_tab_messages_off.png",
+    "region": [
+      188,
+      349,
+      328,
+      477
+    ],
+    "threshold": 0.85
+  },
+  "mt_unread_title": {
+    "file": "mt_unread_title.png",
+    "region": [
+      308,
+      207,
+      578,
+      316
+    ],
+    "threshold": 0.85
+  },
+  "mt_sort_unread": {
+    "file": "mt_sort_unread.png",
+    "region": [
+      712,
+      204,
+      882,
+      314
+    ],
+    "threshold": 0.85
+  }
+}

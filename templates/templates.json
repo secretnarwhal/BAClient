@@ -1,0 +1,2092 @@
+{
+  "formation_title": {
+    "file": "formation_title.png",
+    "region": [
+      150,
+      0,
+      378,
+      80
+    ],
+    "threshold": 0.9
+  },
+  "mobilize": {
+    "file": "mobilize.png",
+    "region": [
+      1625,
+      915,
+      1905,
+      1058
+    ],
+    "threshold": 0.85
+  },
+  "story_menu": {
+    "file": "story_menu.png",
+    "region": [
+      1658,
+      0,
+      1920,
+      156
+    ],
+    "threshold": 0.85
+  },
+  "battle_auto": {
+    "file": "battle_auto.png",
+    "region": [
+      1685,
+      925,
+      1920,
+      1080
+    ],
+    "threshold": 0.75
+  },
+  "battle_failed": {
+    "file": "battle_failed.png",
+    "region": [
+      570,
+      165,
+      1355,
+      445
+    ],
+    "threshold": 0.8
+  },
+  "lobby_campaign": {
+    "file": "lobby_campaign.png",
+    "region": [
+      1660,
+      930,
+      1920,
+      1080
+    ],
+    "threshold": 0.85
+  },
+  "lobby_cafe": {
+    "file": "lobby_cafe.png",
+    "region": [
+      35,
+      950,
+      270,
+      1080
+    ],
+    "threshold": 0.85
+  },
+  "campaign_title": {
+    "file": "campaign_title.png",
+    "region": [
+      100,
+      0,
+      425,
+      122
+    ],
+    "threshold": 0.85
+  },
+  "story_skip": {
+    "file": "story_skip.png",
+    "region": [
+      1708,
+      85,
+      1918,
+      282
+    ],
+    "threshold": 0.8
+  },
+  "skip_question": {
+    "file": "skip_question.png",
+    "region": [
+      688,
+      495,
+      1232,
+      848
+    ],
+    "threshold": 0.85
+  },
+  "skip_confirm": {
+    "file": "skip_confirm.png",
+    "region": [
+      900,
+      610,
+      1400,
+      970
+    ],
+    "threshold": 0.85
+  },
+  "reward_acquired": {
+    "file": "reward_acquired.png",
+    "region": [
+      470,
+      100,
+      1450,
+      365
+    ],
+    "threshold": 0.8
+  },
+  "click_continue": {
+    "file": "click_continue.png",
+    "region": [
+      700,
+      862,
+      1220,
+      1028
+    ],
+    "threshold": 0.85
+  },
+  "episode_new": {
+    "file": "episode_new.png",
+    "region": [
+      1000,
+      250,
+      1100,
+      960
+    ],
+    "threshold": 0.85
+  },
+  "episode_list_title": {
+    "file": "episode_list_title.png",
+    "region": [
+      1260,
+      175,
+      1530,
+      292
+    ],
+    "threshold": 0.85
+  },
+  "enter_episode": {
+    "file": "enter_episode.png",
+    "region": [
+      685,
+      635,
+      1235,
+      932
+    ],
+    "threshold": 0.85
+  },
+  "episode_info_title": {
+    "file": "episode_info_title.png",
+    "region": [
+      745,
+      130,
+      1175,
+      342
+    ],
+    "threshold": 0.85
+  },
+  "ministory_title": {
+    "file": "ministory_title.png",
+    "region": [
+      120,
+      0,
+      402,
+      102
+    ],
+    "threshold": 0.85
+  },
+  "chapter_new": {
+    "file": "chapter_new.png",
+    "region": [
+      110,
+      200,
+      1830,
+      960
+    ],
+    "threshold": 0.85
+  },
+  "next_page": {
+    "file": "next_page.png",
+    "region": [
+      1805,
+      465,
+      1920,
+      612
+    ],
+    "threshold": 0.8
+  },
+  "story_hub_mini": {
+    "file": "story_hub_mini.png",
+    "region": [
+      1090,
+      498,
+      1400,
+      666
+    ],
+    "threshold": 0.85
+  },
+  "story_hub_group": {
+    "file": "story_hub_group.png",
+    "region": [
+      1496,
+      498,
+      1806,
+      666
+    ],
+    "threshold": 0.85
+  },
+  "prev_page": {
+    "file": "prev_page.png",
+    "region": [
+      15,
+      475,
+      121,
+      601
+    ],
+    "threshold": 0.8
+  },
+  "nav_home": {
+    "file": "nav_home.png",
+    "region": [
+      1824,
+      0,
+      1886,
+      80
+    ],
+    "threshold": 0.9
+  },
+  "nav_menu_tab": {
+    "file": "nav_menu_tab.png",
+    "region": [
+      832,
+      216,
+      1088,
+      312
+    ],
+    "threshold": 0.92
+  },
+  "nav_select_roster": {
+    "file": "nav_select_roster.png",
+    "region": [
+      447,
+      183,
+      591,
+      262
+    ],
+    "threshold": 0.92
+  },
+  "nav_momotalk": {
+    "file": "nav_momotalk.png",
+    "region": [
+      252,
+      124,
+      480,
+      215
+    ],
+    "threshold": 0.92
+  },
+  "nav_web_notice": {
+    "file": "nav_web_notice.png",
+    "region": [
+      1642,
+      136,
+      1683,
+      205
+    ],
+    "threshold": 0.92
+  },
+  "nav_battle_pass": {
+    "file": "nav_battle_pass.png",
+    "region": [
+      1377,
+      23,
+      1548,
+      110
+    ],
+    "threshold": 0.92
+  },
+  "nav_notice": {
+    "file": "nav_notice.png",
+    "region": [
+      872,
+      190,
+      1048,
+      286
+    ],
+    "threshold": 0.92
+  },
+  "nav_guide": {
+    "file": "nav_guide.png",
+    "region": [
+      880,
+      222,
+      1040,
+      318
+    ],
+    "threshold": 0.92
+  },
+  "nav_ticket_info": {
+    "file": "nav_ticket_info.png",
+    "region": [
+      757,
+      171,
+      1163,
+      267
+    ],
+    "threshold": 0.92
+  },
+  "nav_location_info": {
+    "file": "nav_location_info.png",
+    "region": [
+      787,
+      112,
+      1133,
+      208
+    ],
+    "threshold": 0.92
+  },
+  "nav_mission_info": {
+    "file": "nav_mission_info.png",
+    "region": [
+      807,
+      107,
+      1113,
+      203
+    ],
+    "threshold": 0.92
+  },
+  "nav_multi_sweep": {
+    "file": "nav_multi_sweep.png",
+    "region": [
+      797,
+      90,
+      1123,
+      186
+    ],
+    "threshold": 0.92
+  },
+  "nav_cafe_earnings": {
+    "file": "nav_cafe_earnings.png",
+    "region": [
+      792,
+      162,
+      1128,
+      258
+    ],
+    "threshold": 0.92
+  },
+  "nav_planned_visit": {
+    "file": "nav_planned_visit.png",
+    "region": [
+      797,
+      78,
+      1123,
+      174
+    ],
+    "threshold": 0.92
+  },
+  "nav_inventory": {
+    "file": "nav_inventory.png",
+    "region": [
+      830,
+      100,
+      1090,
+      196
+    ],
+    "threshold": 0.92
+  },
+  "nav_presets": {
+    "file": "nav_presets.png",
+    "region": [
+      842,
+      108,
+      1084,
+      204
+    ],
+    "threshold": 0.92
+  },
+  "nav_all_locations": {
+    "file": "nav_all_locations.png",
+    "region": [
+      797,
+      91,
+      1123,
+      187
+    ],
+    "threshold": 0.92
+  },
+  "roster_list_title": {
+    "file": "roster_list_title.png",
+    "region": [
+      127,
+      138,
+      383,
+      227
+    ],
+    "threshold": 0.9
+  },
+  "roster_all_tab": {
+    "file": "roster_all_tab.png",
+    "region": [
+      572,
+      128,
+      778,
+      228
+    ],
+    "threshold": 0.9
+  },
+  "roster_basic_tab": {
+    "file": "roster_basic_tab.png",
+    "region": [
+      1002,
+      154,
+      1268,
+      262
+    ],
+    "threshold": 0.9
+  },
+  "roster_weapon_lock": {
+    "file": "roster_weapon_lock.png",
+    "region": [
+      1384,
+      684,
+      1440,
+      776
+    ],
+    "threshold": 0.8
+  },
+  "title_event_recap": {
+    "file": "title_event_recap.png",
+    "region": [
+      153,
+      0,
+      410,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_event_tasks": {
+    "file": "title_event_tasks.png",
+    "region": [
+      153,
+      0,
+      382,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_event": {
+    "file": "title_event.png",
+    "region": [
+      153,
+      0,
+      282,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_work_onboarding": {
+    "file": "title_work_onboarding.png",
+    "region": [
+      150,
+      0,
+      522,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_items": {
+    "file": "title_items.png",
+    "region": [
+      151,
+      0,
+      286,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_attendance": {
+    "file": "title_attendance.png",
+    "region": [
+      151,
+      0,
+      622,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_cafe": {
+    "file": "title_cafe.png",
+    "region": [
+      152,
+      0,
+      309,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_lesson": {
+    "file": "title_lesson.png",
+    "region": [
+      153,
+      0,
+      305,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_lesson_location": {
+    "file": "title_lesson_location.png",
+    "region": [
+      152,
+      0,
+      464,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_formation_menu": {
+    "file": "title_formation_menu.png",
+    "region": [
+      153,
+      0,
+      376,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_crafting": {
+    "file": "title_crafting.png",
+    "region": [
+      152,
+      0,
+      382,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_shop": {
+    "file": "title_shop.png",
+    "region": [
+      152,
+      0,
+      268,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_recruit": {
+    "file": "title_recruit.png",
+    "region": [
+      153,
+      0,
+      469,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_cash_shop": {
+    "file": "title_cash_shop.png",
+    "region": [
+      152,
+      0,
+      371,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_tasks": {
+    "file": "title_tasks.png",
+    "region": [
+      151,
+      0,
+      281,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_mail": {
+    "file": "title_mail.png",
+    "region": [
+      153,
+      0,
+      328,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_mission": {
+    "file": "title_mission.png",
+    "region": [
+      153,
+      0,
+      319,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_main_story": {
+    "file": "title_main_story.png",
+    "region": [
+      153,
+      0,
+      383,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_group_story": {
+    "file": "title_group_story.png",
+    "region": [
+      152,
+      0,
+      407,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_replay": {
+    "file": "title_replay.png",
+    "region": [
+      153,
+      0,
+      305,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_bounty": {
+    "file": "title_bounty.png",
+    "region": [
+      153,
+      0,
+      366,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_commissions": {
+    "file": "title_commissions.png",
+    "region": [
+      152,
+      0,
+      432,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_scrimmage": {
+    "file": "title_scrimmage.png",
+    "region": [
+      152,
+      0,
+      394,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_total_assault": {
+    "file": "title_total_assault.png",
+    "region": [
+      151,
+      0,
+      476,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_joint_firing_drill": {
+    "file": "title_joint_firing_drill.png",
+    "region": [
+      147,
+      0,
+      381,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_grand_assault": {
+    "file": "title_grand_assault.png",
+    "region": [
+      152,
+      0,
+      447,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_tactical_challenge": {
+    "file": "title_tactical_challenge.png",
+    "region": [
+      151,
+      0,
+      536,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "title_final_restriction": {
+    "file": "title_final_restriction.png",
+    "region": [
+      153,
+      0,
+      562,
+      82
+    ],
+    "threshold": 0.93
+  },
+  "main_episode_list_title": {
+    "file": "main_episode_list_title.png",
+    "region": [
+      1046,
+      206,
+      1234,
+      286
+    ],
+    "threshold": 0.9
+  },
+  "main_episode_new": {
+    "file": "main_episode_new.png",
+    "region": [
+      680,
+      290,
+      1120,
+      900
+    ],
+    "threshold": 0.85
+  },
+  "bs_pause": {
+    "file": "bs_pause.png",
+    "region": [
+      1810,
+      16,
+      1892,
+      120
+    ],
+    "threshold": 0.9
+  },
+  "bs_cancel": {
+    "file": "bs_cancel.png",
+    "region": [
+      1262,
+      944,
+      1740,
+      1020
+    ],
+    "threshold": 0.8
+  },
+  "bs_auto_lock": {
+    "file": "bs_auto_lock.png",
+    "region": [
+      1796,
+      976,
+      1850,
+      1056
+    ],
+    "threshold": 0.85
+  },
+  "battle_complete": {
+    "file": "battle_complete.png",
+    "region": [
+      70,
+      0,
+      712,
+      138
+    ],
+    "threshold": 0.85
+  },
+  "result_confirm": {
+    "file": "result_confirm.png",
+    "region": [
+      1650,
+      940,
+      1866,
+      1046
+    ],
+    "threshold": 0.85
+  },
+  "reward_confirm": {
+    "file": "reward_confirm.png",
+    "region": [
+      990,
+      925,
+      1336,
+      1040
+    ],
+    "threshold": 0.85
+  },
+  "defeat_confirm": {
+    "file": "defeat_confirm.png",
+    "region": [
+      780,
+      925,
+      1145,
+      1045
+    ],
+    "threshold": 0.85
+  },
+  "battle_tip": {
+    "file": "battle_tip.png",
+    "region": [
+      425,
+      106,
+      620,
+      244
+    ],
+    "threshold": 0.85
+  },
+  "alliance_title": {
+    "file": "alliance_title.png",
+    "region": [
+      150,
+      0,
+      540,
+      82
+    ],
+    "threshold": 0.9
+  },
+  "nav_relationship": {
+    "file": "nav_relationship.png",
+    "region": [
+      685,
+      218,
+      1240,
+      322
+    ],
+    "threshold": 0.9
+  },
+  "nav_boss_info": {
+    "file": "nav_boss_info.png",
+    "region": [
+      848,
+      102,
+      1072,
+      198
+    ],
+    "threshold": 0.92
+  },
+  "title_menu": {
+    "file": "title_menu.png",
+    "region": [
+      16,
+      908,
+      176,
+      1006
+    ],
+    "threshold": 0.88
+  },
+  "title_copyright": {
+    "file": "title_copyright.png",
+    "region": [
+      511,
+      1006,
+      1409,
+      1080
+    ],
+    "threshold": 0.88
+  },
+  "bs_auto_off": {
+    "file": "bs_auto_off.png",
+    "region": [
+      1764,
+      972,
+      1888,
+      1060
+    ],
+    "threshold": 0.85
+  },
+  "btn__lobby__cafe": {
+    "file": "buttons/btn__lobby__cafe.png",
+    "threshold": 0.8,
+    "region": [
+      98,
+      988,
+      202,
+      1072
+    ]
+  },
+  "btn__lobby__lesson": {
+    "file": "buttons/btn__lobby__lesson.png",
+    "threshold": 0.8,
+    "region": [
+      266,
+      988,
+      370,
+      1072
+    ]
+  },
+  "btn__lobby__students": {
+    "file": "buttons/btn__lobby__students.png",
+    "threshold": 0.8,
+    "region": [
+      438,
+      988,
+      542,
+      1072
+    ]
+  },
+  "btn__lobby__formation": {
+    "file": "buttons/btn__lobby__formation.png",
+    "threshold": 0.8,
+    "region": [
+      605,
+      988,
+      709,
+      1072
+    ]
+  },
+  "btn__lobby__social": {
+    "file": "buttons/btn__lobby__social.png",
+    "threshold": 0.8,
+    "region": [
+      773,
+      988,
+      877,
+      1072
+    ]
+  },
+  "btn__lobby__crafting": {
+    "file": "buttons/btn__lobby__crafting.png",
+    "threshold": 0.8,
+    "region": [
+      936,
+      988,
+      1040,
+      1072
+    ]
+  },
+  "btn__lobby__shop": {
+    "file": "buttons/btn__lobby__shop.png",
+    "threshold": 0.8,
+    "region": [
+      1101,
+      988,
+      1205,
+      1072
+    ]
+  },
+  "btn__lobby__campaign": {
+    "file": "buttons/btn__lobby__campaign.png",
+    "threshold": 0.8,
+    "region": [
+      1748,
+      973,
+      1852,
+      1057
+    ]
+  },
+  "btn__lobby__mail": {
+    "file": "buttons/btn__lobby__mail.png",
+    "threshold": 0.8,
+    "region": [
+      1678,
+      13,
+      1782,
+      97
+    ]
+  },
+  "btn__lobby__menu_grid": {
+    "file": "buttons/btn__lobby__menu_grid.png",
+    "threshold": 0.8,
+    "region": [
+      1786,
+      13,
+      1890,
+      97
+    ]
+  },
+  "btn__lobby__notice": {
+    "file": "buttons/btn__lobby__notice.png",
+    "threshold": 0.8,
+    "region": [
+      23,
+      163,
+      127,
+      247
+    ]
+  },
+  "btn__lobby__momotalk": {
+    "file": "buttons/btn__lobby__momotalk.png",
+    "threshold": 0.8,
+    "region": [
+      153,
+      163,
+      257,
+      247
+    ]
+  },
+  "btn__lobby__attendance": {
+    "file": "buttons/btn__lobby__attendance.png",
+    "threshold": 0.8,
+    "region": [
+      281,
+      163,
+      385,
+      247
+    ]
+  },
+  "btn__lobby__tasks": {
+    "file": "buttons/btn__lobby__tasks.png",
+    "threshold": 0.8,
+    "region": [
+      23,
+      318,
+      127,
+      402
+    ]
+  },
+  "btn__lobby__event_recap": {
+    "file": "buttons/btn__lobby__event_recap.png",
+    "threshold": 0.8,
+    "region": [
+      1541,
+      918,
+      1645,
+      1002
+    ]
+  },
+  "btn__campaign__mission": {
+    "file": "buttons/btn__campaign__mission.png",
+    "threshold": 0.8,
+    "region": [
+      1098,
+      258,
+      1202,
+      342
+    ]
+  },
+  "btn__campaign__story": {
+    "file": "buttons/btn__campaign__story.png",
+    "threshold": 0.8,
+    "region": [
+      1688,
+      258,
+      1792,
+      342
+    ]
+  },
+  "btn__campaign__bounty": {
+    "file": "buttons/btn__campaign__bounty.png",
+    "threshold": 0.8,
+    "region": [
+      1058,
+      548,
+      1162,
+      632
+    ]
+  },
+  "btn__campaign__commissions": {
+    "file": "buttons/btn__campaign__commissions.png",
+    "threshold": 0.8,
+    "region": [
+      1023,
+      733,
+      1127,
+      817
+    ]
+  },
+  "btn__campaign__scrimmage": {
+    "file": "buttons/btn__campaign__scrimmage.png",
+    "threshold": 0.8,
+    "region": [
+      1008,
+      893,
+      1112,
+      977
+    ]
+  },
+  "btn__campaign__total_assault": {
+    "file": "buttons/btn__campaign__total_assault.png",
+    "threshold": 0.8,
+    "region": [
+      1298,
+      568,
+      1402,
+      652
+    ]
+  },
+  "btn__campaign__joint_firing_drill": {
+    "file": "buttons/btn__campaign__joint_firing_drill.png",
+    "threshold": 0.8,
+    "region": [
+      1493,
+      568,
+      1597,
+      652
+    ]
+  },
+  "btn__campaign__grand_assault": {
+    "file": "buttons/btn__campaign__grand_assault.png",
+    "threshold": 0.8,
+    "region": [
+      1693,
+      568,
+      1797,
+      652
+    ]
+  },
+  "btn__campaign__tactical_challenge": {
+    "file": "buttons/btn__campaign__tactical_challenge.png",
+    "threshold": 0.8,
+    "region": [
+      1253,
+      858,
+      1357,
+      942
+    ]
+  },
+  "btn__campaign__final_restriction": {
+    "file": "buttons/btn__campaign__final_restriction.png",
+    "threshold": 0.8,
+    "region": [
+      1468,
+      818,
+      1572,
+      902
+    ]
+  },
+  "btn__campaign__event": {
+    "file": "buttons/btn__campaign__event.png",
+    "threshold": 0.8,
+    "region": [
+      103,
+      193,
+      207,
+      277
+    ]
+  },
+  "btn__mission__normal_tab": {
+    "file": "buttons/btn__mission__normal_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1148,
+      187,
+      1252,
+      271
+    ]
+  },
+  "btn__mission__hard_tab": {
+    "file": "buttons/btn__mission__hard_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1543,
+      187,
+      1647,
+      271
+    ]
+  },
+  "btn__mission__multi_sweep": {
+    "file": "buttons/btn__mission__multi_sweep.png",
+    "threshold": 0.8,
+    "region": [
+      748,
+      848,
+      852,
+      932
+    ]
+  },
+  "btn__mission__prev_area": {
+    "file": "buttons/btn__mission__prev_area.png",
+    "threshold": 0.8,
+    "region": [
+      13,
+      498,
+      117,
+      582
+    ]
+  },
+  "btn__mission__next_area": {
+    "file": "buttons/btn__mission__next_area.png",
+    "threshold": 0.8,
+    "region": [
+      1806,
+      498,
+      1910,
+      582
+    ]
+  },
+  "btn__mission__enter_1": {
+    "file": "buttons/btn__mission__enter_1.png",
+    "threshold": 0.8,
+    "region": [
+      1626,
+      326,
+      1730,
+      410
+    ]
+  },
+  "btn__mission__enter_2": {
+    "file": "buttons/btn__mission__enter_2.png",
+    "threshold": 0.8,
+    "region": [
+      1626,
+      503,
+      1730,
+      587
+    ]
+  },
+  "btn__mission__enter_3": {
+    "file": "buttons/btn__mission__enter_3.png",
+    "threshold": 0.8,
+    "region": [
+      1626,
+      678,
+      1730,
+      762
+    ]
+  },
+  "btn__story_hub__main_story": {
+    "file": "buttons/btn__story_hub__main_story.png",
+    "threshold": 0.8,
+    "region": [
+      438,
+      458,
+      542,
+      542
+    ]
+  },
+  "btn__story_hub__mini_story": {
+    "file": "buttons/btn__story_hub__mini_story.png",
+    "threshold": 0.8,
+    "region": [
+      1118,
+      388,
+      1222,
+      472
+    ]
+  },
+  "btn__story_hub__group_story": {
+    "file": "buttons/btn__story_hub__group_story.png",
+    "threshold": 0.8,
+    "region": [
+      1538,
+      388,
+      1642,
+      472
+    ]
+  },
+  "btn__story_hub__replay": {
+    "file": "buttons/btn__story_hub__replay.png",
+    "threshold": 0.8,
+    "region": [
+      1638,
+      788,
+      1742,
+      872
+    ]
+  },
+  "btn__ministory_list__next_page": {
+    "file": "buttons/btn__ministory_list__next_page.png",
+    "threshold": 0.8,
+    "region": [
+      1816,
+      496,
+      1920,
+      580
+    ]
+  },
+  "btn__group_story__next_page": {
+    "file": "buttons/btn__group_story__next_page.png",
+    "threshold": 0.8,
+    "region": [
+      1816,
+      496,
+      1920,
+      580
+    ]
+  },
+  "btn__replay__relationship": {
+    "file": "buttons/btn__replay__relationship.png",
+    "threshold": 0.8,
+    "region": [
+      358,
+      538,
+      462,
+      622
+    ]
+  },
+  "btn__replay__task_stories": {
+    "file": "buttons/btn__replay__task_stories.png",
+    "threshold": 0.8,
+    "region": [
+      918,
+      538,
+      1022,
+      622
+    ]
+  },
+  "btn__replay__event_stories": {
+    "file": "buttons/btn__replay__event_stories.png",
+    "threshold": 0.8,
+    "region": [
+      1478,
+      538,
+      1582,
+      622
+    ]
+  },
+  "btn__lesson__ticket_info": {
+    "file": "buttons/btn__lesson__ticket_info.png",
+    "threshold": 0.8,
+    "region": [
+      1692,
+      125,
+      1796,
+      209
+    ]
+  },
+  "btn__lesson__schale_office": {
+    "file": "buttons/btn__lesson__schale_office.png",
+    "threshold": 0.8,
+    "region": [
+      1248,
+      248,
+      1352,
+      332
+    ]
+  },
+  "btn__lesson_location__all_locations": {
+    "file": "buttons/btn__lesson_location__all_locations.png",
+    "threshold": 0.8,
+    "region": [
+      1694,
+      950,
+      1798,
+      1034
+    ]
+  },
+  "btn__lesson_location__prev_floor": {
+    "file": "buttons/btn__lesson_location__prev_floor.png",
+    "threshold": 0.8,
+    "region": [
+      938,
+      768,
+      1042,
+      852
+    ]
+  },
+  "btn__lesson_location__next_floor": {
+    "file": "buttons/btn__lesson_location__next_floor.png",
+    "threshold": 0.8,
+    "region": [
+      1838,
+      768,
+      1920,
+      852
+    ]
+  },
+  "btn__cafe__earnings": {
+    "file": "buttons/btn__cafe__earnings.png",
+    "threshold": 0.8,
+    "region": [
+      1708,
+      943,
+      1812,
+      1027
+    ]
+  },
+  "btn__cafe__move_cafe": {
+    "file": "buttons/btn__cafe__move_cafe.png",
+    "threshold": 0.8,
+    "region": [
+      153,
+      116,
+      257,
+      200
+    ]
+  },
+  "btn__cafe__invitation": {
+    "file": "buttons/btn__cafe__invitation.png",
+    "threshold": 0.8,
+    "region": [
+      1273,
+      938,
+      1377,
+      1022
+    ]
+  },
+  "btn__cafe__unannounced_visit": {
+    "file": "buttons/btn__cafe__unannounced_visit.png",
+    "threshold": 0.8,
+    "region": [
+      53,
+      383,
+      157,
+      467
+    ]
+  },
+  "btn__tasks__all_tab": {
+    "file": "buttons/btn__tasks__all_tab.png",
+    "threshold": 0.8,
+    "region": [
+      808,
+      126,
+      912,
+      210
+    ]
+  },
+  "btn__tasks__daily_tab": {
+    "file": "buttons/btn__tasks__daily_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1034,
+      126,
+      1138,
+      210
+    ]
+  },
+  "btn__tasks__weekly_tab": {
+    "file": "buttons/btn__tasks__weekly_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1262,
+      126,
+      1366,
+      210
+    ]
+  },
+  "btn__tasks__achievement_tab": {
+    "file": "buttons/btn__tasks__achievement_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1492,
+      126,
+      1596,
+      210
+    ]
+  },
+  "btn__tasks__challenges_tab": {
+    "file": "buttons/btn__tasks__challenges_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1716,
+      126,
+      1820,
+      210
+    ]
+  },
+  "btn__tasks__daily_bonus_claim": {
+    "file": "buttons/btn__tasks__daily_bonus_claim.png",
+    "threshold": 0.8,
+    "region": [
+      1406,
+      958,
+      1510,
+      1042
+    ]
+  },
+  "btn__tasks__claim_all": {
+    "file": "buttons/btn__tasks__claim_all.png",
+    "threshold": 0.8,
+    "region": [
+      1672,
+      960,
+      1776,
+      1044
+    ]
+  },
+  "btn__mail__claim_all": {
+    "file": "buttons/btn__mail__claim_all.png",
+    "threshold": 0.8,
+    "region": [
+      1648,
+      960,
+      1752,
+      1044
+    ]
+  },
+  "btn__bounty__overpass": {
+    "file": "buttons/btn__bounty__overpass.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      288,
+      1472,
+      372
+    ]
+  },
+  "btn__bounty__desert_railroad": {
+    "file": "buttons/btn__bounty__desert_railroad.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      473,
+      1472,
+      557
+    ]
+  },
+  "btn__bounty__classroom": {
+    "file": "buttons/btn__bounty__classroom.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      663,
+      1472,
+      747
+    ]
+  },
+  "btn__commissions__base_defense": {
+    "file": "buttons/btn__commissions__base_defense.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      278,
+      1472,
+      362
+    ]
+  },
+  "btn__commissions__item_retrieval": {
+    "file": "buttons/btn__commissions__item_retrieval.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      438,
+      1472,
+      522
+    ]
+  },
+  "btn__scrimmage__millennium": {
+    "file": "buttons/btn__scrimmage__millennium.png",
+    "threshold": 0.8,
+    "region": [
+      1368,
+      603,
+      1472,
+      687
+    ]
+  },
+  "btn__tactical_challenge__time_reward_claim": {
+    "file": "buttons/btn__tactical_challenge__time_reward_claim.png",
+    "threshold": 0.8,
+    "region": [
+      476,
+      541,
+      580,
+      625
+    ]
+  },
+  "btn__tactical_challenge__daily_reward_claim": {
+    "file": "buttons/btn__tactical_challenge__daily_reward_claim.png",
+    "threshold": 0.8,
+    "region": [
+      476,
+      663,
+      580,
+      747
+    ]
+  },
+  "btn__student_detail__next_student": {
+    "file": "buttons/btn__student_detail__next_student.png",
+    "threshold": 0.8,
+    "region": [
+      1821,
+      536,
+      1920,
+      620
+    ]
+  },
+  "btn__student_detail__prev_student": {
+    "file": "buttons/btn__student_detail__prev_student.png",
+    "threshold": 0.8,
+    "region": [
+      0,
+      536,
+      97,
+      620
+    ]
+  },
+  "btn__event__story_tab": {
+    "file": "buttons/btn__event__story_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1166,
+      126,
+      1270,
+      210
+    ]
+  },
+  "btn__event__quest_tab": {
+    "file": "buttons/btn__event__quest_tab.png",
+    "threshold": 0.8,
+    "region": [
+      1558,
+      126,
+      1662,
+      210
+    ]
+  },
+  "btn__event__event_tasks": {
+    "file": "buttons/btn__event__event_tasks.png",
+    "threshold": 0.8,
+    "region": [
+      546,
+      987,
+      650,
+      1080
+    ]
+  },
+  "btn__event__event_shop": {
+    "file": "buttons/btn__event__event_shop.png",
+    "threshold": 0.8,
+    "region": [
+      364,
+      987,
+      468,
+      1080
+    ]
+  },
+  "btn__event_tasks__claim_all": {
+    "file": "buttons/btn__event_tasks__claim_all.png",
+    "threshold": 0.8,
+    "region": [
+      1673,
+      960,
+      1777,
+      1044
+    ]
+  },
+  "btn__alliance_formation__mobilize": {
+    "file": "buttons/btn__alliance_formation__mobilize.png",
+    "threshold": 0.8,
+    "region": [
+      1713,
+      946,
+      1817,
+      1030
+    ]
+  },
+  "btn__battle_result__confirm": {
+    "file": "buttons/btn__battle_result__confirm.png",
+    "threshold": 0.8,
+    "region": [
+      1703,
+      953,
+      1807,
+      1037
+    ]
+  },
+  "btn__reward__confirm": {
+    "file": "buttons/btn__reward__confirm.png",
+    "threshold": 0.8,
+    "region": [
+      1106,
+      946,
+      1210,
+      1030
+    ]
+  },
+  "btn__reward__go_to_lobby": {
+    "file": "buttons/btn__reward__go_to_lobby.png",
+    "threshold": 0.8,
+    "region": [
+      710,
+      946,
+      814,
+      1030
+    ]
+  },
+  "btn__defeat__confirm": {
+    "file": "buttons/btn__defeat__confirm.png",
+    "threshold": 0.8,
+    "region": [
+      908,
+      945,
+      1012,
+      1029
+    ]
+  },
+  "btn__battle_tip__confirm": {
+    "file": "buttons/btn__battle_tip__confirm.png",
+    "threshold": 0.8,
+    "region": [
+      908,
+      945,
+      1012,
+      1029
+    ]
+  },
+  "btn__top__back": {
+    "file": "buttons/btn__top__back.png",
+    "threshold": 0.8,
+    "region": [
+      33,
+      13,
+      137,
+      97
+    ]
+  },
+  "btn__top__home": {
+    "file": "buttons/btn__top__home.png",
+    "threshold": 0.8,
+    "region": [
+      1803,
+      0,
+      1907,
+      93
+    ]
+  },
+  "btn__menu_tab__items": {
+    "file": "buttons/btn__menu_tab__items.png",
+    "threshold": 0.8,
+    "region": [
+      1132,
+      466,
+      1236,
+      550
+    ]
+  },
+  "btn__menu_tab__close": {
+    "file": "buttons/btn__menu_tab__close.png",
+    "threshold": 0.8,
+    "region": [
+      1222,
+      224,
+      1326,
+      308
+    ]
+  },
+  "btn__select_roster__close": {
+    "file": "buttons/btn__select_roster__close.png",
+    "threshold": 0.8,
+    "region": [
+      718,
+      823,
+      822,
+      907
+    ]
+  },
+  "btn__momotalk__close": {
+    "file": "buttons/btn__momotalk__close.png",
+    "threshold": 0.8,
+    "region": [
+      1628,
+      125,
+      1732,
+      209
+    ]
+  },
+  "btn__notice_web_view__close": {
+    "file": "buttons/btn__notice_web_view__close.png",
+    "threshold": 0.8,
+    "region": [
+      1610,
+      128,
+      1714,
+      212
+    ]
+  },
+  "btn__battle_pass__close": {
+    "file": "buttons/btn__battle_pass__close.png",
+    "threshold": 0.8,
+    "region": [
+      1811,
+      20,
+      1915,
+      104
+    ]
+  },
+  "btn__notice__close": {
+    "file": "buttons/btn__notice__close.png",
+    "threshold": 0.8,
+    "region": [
+      1276,
+      198,
+      1380,
+      282
+    ]
+  },
+  "btn__guide__close": {
+    "file": "buttons/btn__guide__close.png",
+    "threshold": 0.8,
+    "region": [
+      1328,
+      230,
+      1432,
+      314
+    ]
+  },
+  "btn__lesson_ticket__close": {
+    "file": "buttons/btn__lesson_ticket__close.png",
+    "threshold": 0.8,
+    "region": [
+      1269,
+      179,
+      1373,
+      263
+    ]
+  },
+  "btn__location_info__start_lesson": {
+    "file": "buttons/btn__location_info__start_lesson.png",
+    "threshold": 0.8,
+    "region": [
+      908,
+      790,
+      1012,
+      874
+    ]
+  },
+  "btn__location_info__close": {
+    "file": "buttons/btn__location_info__close.png",
+    "threshold": 0.8,
+    "region": [
+      1392,
+      120,
+      1496,
+      204
+    ]
+  },
+  "btn__mission_info__sweep_min": {
+    "file": "buttons/btn__mission_info__sweep_min.png",
+    "threshold": 0.8,
+    "region": [
+      1130,
+      453,
+      1234,
+      537
+    ]
+  },
+  "btn__mission_info__sweep_minus": {
+    "file": "buttons/btn__mission_info__sweep_minus.png",
+    "threshold": 0.8,
+    "region": [
+      1233,
+      453,
+      1337,
+      537
+    ]
+  },
+  "btn__mission_info__sweep_plus": {
+    "file": "buttons/btn__mission_info__sweep_plus.png",
+    "threshold": 0.8,
+    "region": [
+      1468,
+      453,
+      1572,
+      537
+    ]
+  },
+  "btn__mission_info__sweep_max": {
+    "file": "buttons/btn__mission_info__sweep_max.png",
+    "threshold": 0.8,
+    "region": [
+      1570,
+      453,
+      1674,
+      537
+    ]
+  },
+  "btn__mission_info__start_sweep": {
+    "file": "buttons/btn__mission_info__start_sweep.png",
+    "threshold": 0.8,
+    "region": [
+      1348,
+      615,
+      1452,
+      699
+    ]
+  },
+  "btn__mission_info__start_mission": {
+    "file": "buttons/btn__mission_info__start_mission.png",
+    "threshold": 0.8,
+    "region": [
+      1348,
+      823,
+      1452,
+      907
+    ]
+  },
+  "btn__mission_info__close": {
+    "file": "buttons/btn__mission_info__close.png",
+    "threshold": 0.8,
+    "region": [
+      1639,
+      115,
+      1743,
+      199
+    ]
+  },
+  "btn__multi_sweep__close": {
+    "file": "buttons/btn__multi_sweep__close.png",
+    "threshold": 0.8,
+    "region": [
+      1780,
+      98,
+      1884,
+      182
+    ]
+  },
+  "btn__cafe_earnings__claim": {
+    "file": "buttons/btn__cafe_earnings__claim.png",
+    "threshold": 0.8,
+    "region": [
+      908,
+      758,
+      1012,
+      842
+    ]
+  },
+  "btn__cafe_earnings__close": {
+    "file": "buttons/btn__cafe_earnings__close.png",
+    "threshold": 0.8,
+    "region": [
+      1422,
+      170,
+      1526,
+      254
+    ]
+  },
+  "btn__planned_visit__close": {
+    "file": "buttons/btn__planned_visit__close.png",
+    "threshold": 0.8,
+    "region": [
+      1422,
+      86,
+      1526,
+      170
+    ]
+  },
+  "btn__inventory__close": {
+    "file": "buttons/btn__inventory__close.png",
+    "threshold": 0.8,
+    "region": [
+      1661,
+      108,
+      1765,
+      192
+    ]
+  },
+  "btn__presets__close": {
+    "file": "buttons/btn__presets__close.png",
+    "threshold": 0.8,
+    "region": [
+      1542,
+      116,
+      1646,
+      200
+    ]
+  },
+  "btn__all_locations__theater": {
+    "file": "buttons/btn__all_locations__theater.png",
+    "threshold": 0.8,
+    "region": [
+      394,
+      318,
+      498,
+      402
+    ]
+  },
+  "btn__all_locations__gym": {
+    "file": "buttons/btn__all_locations__gym.png",
+    "threshold": 0.8,
+    "region": [
+      910,
+      318,
+      1014,
+      402
+    ]
+  },
+  "btn__all_locations__library": {
+    "file": "buttons/btn__all_locations__library.png",
+    "threshold": 0.8,
+    "region": [
+      1424,
+      318,
+      1528,
+      402
+    ]
+  },
+  "btn__all_locations__classroom": {
+    "file": "buttons/btn__all_locations__classroom.png",
+    "threshold": 0.8,
+    "region": [
+      394,
+      548,
+      498,
+      632
+    ]
+  },
+  "btn__all_locations__laboratory": {
+    "file": "buttons/btn__all_locations__laboratory.png",
+    "threshold": 0.8,
+    "region": [
+      910,
+      548,
+      1014,
+      632
+    ]
+  },
+  "btn__all_locations__close": {
+    "file": "buttons/btn__all_locations__close.png",
+    "threshold": 0.8,
+    "region": [
+      1654,
+      99,
+      1758,
+      183
+    ]
+  },
+  "btn__relationship_rank_buff__close": {
+    "file": "buttons/btn__relationship_rank_buff__close.png",
+    "threshold": 0.8,
+    "region": [
+      1477,
+      222,
+      1581,
+      306
+    ]
+  },
+  "btn__boss_info__enter": {
+    "file": "buttons/btn__boss_info__enter.png",
+    "threshold": 0.8,
+    "region": [
+      910,
+      826,
+      1014,
+      910
+    ]
+  },
+  "btn__boss_info__close": {
+    "file": "buttons/btn__boss_info__close.png",
+    "threshold": 0.8,
+    "region": [
+      1331,
+      105,
+      1435,
+      189
+    ]
+  },
+  "result_stats": {
+    "file": "result_stats.png",
+    "region": [
+      1506,
+      922,
+      1672,
+      1072
+    ],
+    "threshold": 0.9
+  },
+  "mobilize_unit_title": {
+    "file": "mobilize_unit_title.png",
+    "region": [
+      148,
+      0,
+      432,
+      80
+    ],
+    "threshold": 0.9
+  },
+  "episode_info_close": {
+    "file": "episode_info_close.png",
+    "region": [
+      1300,
+      180,
+      1444,
+      302
+    ],
+    "threshold": 0.85
+  },
+  "notice_reconnect": {
+    "file": "notice_reconnect.png",
+    "region": [
+      960,
+      690,
+      1340,
+      830
+    ],
+    "threshold": 0.9
+  },
+  "date_notice_confirm": {
+    "file": "date_notice_confirm.png",
+    "region": [
+      800,
+      682,
+      1120,
+      830
+    ],
+    "threshold": 0.9
+  }
+}

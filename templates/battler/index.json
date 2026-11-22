@@ -1,0 +1,22 @@
+{
+  "enemy_badge": {
+    "file": "enemy_badge.png",
+    "region": [
+      1484,
+      161,
+      1542,
+      219
+    ],
+    "threshold": 0.7
+  },
+  "boss_tag": {
+    "file": "boss_tag.png",
+    "region": [
+      503,
+      104,
+      648,
+      148
+    ],
+    "threshold": 0.72
+  }
+}

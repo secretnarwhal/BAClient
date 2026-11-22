@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson Atlas</title>
+<style>
+:root {
+  --sky: #d7f0fb; --sky-2: #bfe6f8; --navy: #2d4663; --navy-2: #1f3450; --ink: #2b3a4d; --dim: #6c8096;
+  --card: #ffffff; --line: #c9dbe6; --cyan: #45c8fc; --yellow: #ffe14d; --pink: #ff80c5; --warn: #d9465b;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--sky); color: var(--ink);
+  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif; }
+#view { position: fixed; inset: 0; display: block; cursor: grab; touch-action: none; }
+#view.drag { cursor: grabbing; }
+header { position: fixed; top: 12px; left: 12px; right: 12px; display: flex; gap: 10px; align-items: center;
+  flex-wrap: wrap; pointer-events: none; }
+header > * { pointer-events: auto; }
+.brand { background: var(--navy); color: #fff; padding: 8px 22px 8px 16px; font-weight: 700; font-size: 17px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
+.brand small { font-weight: 400; font-size: 12px; opacity: .78; margin-left: 10px; }
+.tool { height: 36px; border: 0; background: var(--card); color: var(--navy); border-radius: 7px; padding: 0 12px;
+  font: 600 13px inherit; font-family: inherit; box-shadow: 0 2px 0 var(--line), 0 3px 10px rgba(45,70,99,.14); }
+button.tool { cursor: pointer; }
+button.tool:hover { background: #eefaff; }
+button.tool[aria-pressed="true"] { background: var(--cyan); color: var(--navy-2); }
+input.tool { width: 210px; font-weight: 500; }
+input.tool:focus, button.tool:focus-visible, #places button:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
+#status { font-size: 12px; color: var(--navy); background: rgba(255,255,255,.82); padding: 5px 10px; border-radius: 6px; }
+#status.warn { color: #fff; background: var(--warn); }
+#places { position: fixed; left: 12px; top: 64px; bottom: 12px; width: 212px; overflow-y: auto; display: flex;
+  flex-direction: column; gap: 4px; padding-right: 3px; }
+#places button { display: flex; justify-content: space-between; gap: 8px; align-items: center; width: 100%; border: 0;
+  border-radius: 6px; padding: 7px 10px; background: rgba(255,255,255,.9); color: var(--navy); font: 600 12px inherit;
+  font-family: inherit; text-align: left; cursor: pointer; }
+#places button:hover { background: #fff; box-shadow: inset 3px 0 0 var(--cyan); }
+#places button.off { color: var(--dim); font-weight: 500; }
+#places span { flex: none; font-size: 11px; color: var(--dim); }
+#tip { position: fixed; display: none; pointer-events: none; background: var(--navy-2); color: #fff; padding: 7px 11px;
+  border-radius: 6px; font-size: 13px; line-height: 1.35; max-width: 280px; box-shadow: 0 4px 14px rgba(0,0,0,.28); z-index: 5; }
+#tip small { display: block; color: #bcd3e6; font-size: 11px; }
+#empty { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--navy); color: #fff;
+  padding: 9px 16px; border-radius: 7px; font-size: 13px; display: none; max-width: calc(100vw - 32px); text-align: center; }
+@media (max-width: 760px) { #places { display: none; } input.tool { width: 130px; } .brand small { display: none; } }
+</style>
+</head>
+<body>
+<canvas id="view" aria-label="Zoomable map of every lesson location and student"></canvas>
+<header>
+  <div class="brand">Lesson Atlas<small id="count"></small></div>
+  <input class="tool" id="find" type="search" placeholder="Find a student" aria-label="Find a student">
+  <button class="tool" id="owned" aria-pressed="false">Only mine</button>
+  <button class="tool" id="big" aria-pressed="true" title="Keep icons readable when zoomed out">Big icons</button>
+  <button class="tool" id="fit">See all</button>
+  <div id="status"></div>
+</header>
+<nav id="places" aria-label="Locations"></nav>
+<div id="tip" role="status"></div>
+<div id="empty"></div>
+<script src="atlas_data.js"></script>
+<script>
+const canvas = document.getElementById("view"), g = canvas.getContext("2d");
+const $ = id => document.getElementById(id);
+const GAP = 520, TITLE = 330, BALLOON = 178, SLANT = Math.tan(10 * Math.PI / 180);
+let data = window.ATLAS || {locations: [], icons: {}}, cells = [], cam = {x: 0, y: 0, z: 0.1}, want = null;
+let needle = "", onlyOwned = false, bigIcons = true, hover = null, dirty = true, W = 0, H = 0, DPR = 1;
+const images = new Map();
+
+function image(src) {
+  let im = images.get(src);
+  if (!im) { im = new Image(); im.onload = () => dirty = true; im.onerror = () => im.failed = true; im.src = src; images.set(src, im); }
+  return im.complete && im.naturalWidth && !im.failed ? im : null;
+}
+const sprite = n => image("maps/ui/" + n + ".png");
+
+function layout() {
+  const n = data.locations.length, cols = Math.max(1, Math.ceil(Math.sqrt(n * 1.15)));
+  const sized = data.locations.map(loc => {   // maps differ in size, so measure each from its layers
+    const left = Math.min(...loc.layers.map(l => l.x - l.w / 2)), right = Math.max(...loc.layers.map(l => l.x + l.w / 2));
+    const top = Math.max(...loc.layers.map(l => l.y + l.h / 2)), bottom = Math.min(...loc.layers.map(l => l.y - l.h / 2));
+    return {loc, w: right - left, h: top - bottom, mx: -left, my: top};
+  });
+  const cw = Math.max(1, ...sized.map(c => c.w)) + GAP;
+  cells = []; let y = 0;
+  for (let r = 0; r * cols < n; r++) {
+    const row = sized.slice(r * cols, (r + 1) * cols), tall = Math.max(...row.map(c => c.h));
+    row.forEach((c, i) => cells.push({...c, x: i * cw + (cw - GAP - c.w) / 2, y: y + TITLE + (tall - c.h) / 2}));
+    y += tall + TITLE + GAP;
+  }
+  layout.w = Math.max(1, cols * cw - GAP); layout.h = Math.max(1, y - GAP);
+}
+function fit(box, animate = true) {
+  const left = W > 760 ? 236 : 12, top = 70;
+  const z = Math.min((W - left - 16) / box.w, (H - top - 16) / box.h);
+  const next = {z, x: box.x + box.w / 2 - (left + (W - left - 16) / 2) / z, y: box.y + box.h / 2 - (top + (H - top - 16) / 2) / z};
+  if (animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) want = next; else { cam = next; want = null; }
+  dirty = true;
+}
+const fitAll = a => fit({x: 0, y: 0, w: layout.w, h: layout.h}, a);
+const toX = x => (x - cam.x) * cam.z, toY = y => (y - cam.y) * cam.z;
+
+function matches(s) {
+  if (onlyOwned && !s.owned) return false;
+  return !needle || String(s.name || "").toLowerCase().includes(needle);
+}
+function balloonScale() { return bigIcons ? Math.max(1, 30 / (BALLOON * cam.z)) : 1; }
+
+function slantPath(cx, cy, w, h, r) {
+  const k = SLANT, x0 = -w / 2, x1 = w / 2, y0 = -h / 2, y1 = h / 2;
+  const p = (x, y) => [cx + x - y * k, cy + y];
+  g.beginPath();
+  g.moveTo(...p(x0 + r, y0)); g.lineTo(...p(x1 - r, y0)); g.quadraticCurveTo(...p(x1, y0), ...p(x1, y0 + r));
+  g.lineTo(...p(x1, y1 - r)); g.quadraticCurveTo(...p(x1, y1), ...p(x1 - r, y1));
+  g.lineTo(...p(x0 + r, y1)); g.quadraticCurveTo(...p(x0, y1), ...p(x0, y1 - r));
+  g.lineTo(...p(x0, y0 + r)); g.quadraticCurveTo(...p(x0, y0), ...p(x0 + r, y0)); g.closePath();
+}
+
+function drawBalloon(px, py, s, faded) {
+  const u = cam.z * balloonScale();          // screen pixels per balloon unit
+  const cx = toX(px), cy = toY(py);
+  if (cx < -200 || cy < -200 || cx > W + 200 || cy > H + 200) return;
+  g.save();
+  g.globalAlpha = faded ? 0.22 : 1;
+  g.translate(cx, cy); g.scale(u, u);
+  const frame = sprite(s.owned ? "balloon_owned" : "balloon_other");
+  if (frame) g.drawImage(frame, -frame.width / 2, -frame.height / 2);
+  else { slantPath(-2, -14, 160, 150, 22); g.fillStyle = "#fff"; g.fill(); }
+  const file = data.icons[s.dev], face = file ? image(file) : null;
+  g.save(); slantPath(-2, -14, 146, 134, 18); g.clip();
+  if (face) g.drawImage(face, -122, -111, 240, 194);
+  else { g.fillStyle = "#b5c3cc"; g.fillRect(-90, -90, 180, 160); }
+  g.restore();
+  const line = sprite(s.owned ? "line_owned" : "line_other");
+  if (line) g.drawImage(line, -line.width / 2, -line.height / 2);
+  else { slantPath(-2, -14, 150, 138, 20); g.lineWidth = 5; g.strokeStyle = s.owned ? "#ff80c5" : "#fff"; g.stroke(); }
+  if (s.owned) {
+    const heart = sprite("heart");
+    if (heart) g.drawImage(heart, 66 - 42, 30 - 40, 85, 80);
+    else { g.fillStyle = "#ff9ec4"; g.beginPath(); g.arc(66, 30, 36, 0, 7); g.fill(); }
+    if (s.bond != null) {
+      g.fillStyle = "#2d4664"; g.font = "700 36px 'Noto Sans','Segoe UI',sans-serif";
+      g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(s.bond, 66, 30);
+    }
+  }
+  if (hover && hover.s === s) { slantPath(-2, -14, 172, 160, 24); g.lineWidth = 7; g.strokeStyle = "#ffe14d"; g.stroke(); }
+  g.restore();
+}
+
+function drawTitle(c) {
+  const x = toX(c.x), y = toY(c.y - 40), size = Math.max(11, Math.min(46, 150 * cam.z));
+  if (x > W || x + c.w * cam.z < 0 || y < -60 || y > H + 60) return;
+  const text = c.loc.title + (c.loc.rank ? "   Rank " + c.loc.rank : "");
+  g.font = "700 " + size + "px 'Noto Sans','Segoe UI',sans-serif";
+  const tw = g.measureText(text).width, h = size * 1.7;
+  g.fillStyle = "#2d4663"; g.beginPath();
+  g.moveTo(x, y - h); g.lineTo(x + tw + size * 1.5, y - h); g.lineTo(x + tw + size, y); g.lineTo(x, y); g.closePath(); g.fill();
+  g.fillStyle = "#fff"; g.textAlign = "left"; g.textBaseline = "middle"; g.fillText(text, x + size * .55, y - h / 2 + 1);
+  if (!c.loc.scanned) {
+    g.font = "600 " + size * .62 + "px 'Noto Sans','Segoe UI',sans-serif";
+    g.fillStyle = "#2d4663"; g.fillText("not scanned yet", x + tw + size * 1.8, y - h / 2 + 1);
+  }
+}
+
+function shadeFor(c) {               // the game's darkening of locked buildings, cut to the map's shape
+  const locked = c.loc.zones.filter(z => z.locked && z.shade);
+  if (!locked.length) return null;
+  const base = image("maps/" + c.loc.layers[0].file);
+  const key = locked.map(z => z.id).join() + (base ? "+" : "-");
+  if (c.loc.shadeKey === key) return c.loc.shadeImage;
+  if (!base) return null;
+  const k = 1600 / c.w, off = document.createElement("canvas");
+  off.width = 1600; off.height = Math.round(c.h * k);
+  const o = off.getContext("2d");
+  o.setTransform(k, 0, 0, k, k * c.mx, k * c.my);
+  o.fillStyle = "#182030"; o.beginPath();
+  for (const z of locked) for (const [a, b, d] of z.shade.t) {
+    const p = i => z.shade.v[i];
+    o.moveTo(p(a)[0], -p(a)[1]); o.lineTo(p(b)[0], -p(b)[1]); o.lineTo(p(d)[0], -p(d)[1]); o.closePath();
+  }
+  o.fill("nonzero");
+  o.setTransform(1, 0, 0, 1, 0, 0); o.globalCompositeOperation = "destination-in";
+  const l = c.loc.layers[0];
+  o.drawImage(base, (c.mx + l.x - l.w / 2) * k, (c.my - l.y - l.h / 2) * k, l.w * k, l.h * k);
+  c.loc.shadeKey = key; c.loc.shadeImage = off;
+  return off;
+}
+
+function draw() {
+  g.setTransform(DPR, 0, 0, DPR, 0, 0);
+  const sky = g.createLinearGradient(0, 0, W, H); sky.addColorStop(0, "#dff4fc"); sky.addColorStop(1, "#b9e3f6");
+  g.fillStyle = sky; g.fillRect(0, 0, W, H);
+  g.imageSmoothingQuality = "high";
+  for (const c of cells) {
+    const x = toX(c.x), y = toY(c.y), w = c.w * cam.z, h = c.h * cam.z;
+    if (x > W || y > H || x + w < 0 || y + h < 0) continue;
+    g.fillStyle = "rgba(45,70,99,.16)"; g.fillRect(x + 5, y + 7, w, h);
+    g.fillStyle = "#eaf6fb"; g.fillRect(x, y, w, h);
+    for (const l of c.loc.layers) {
+      const full = "maps/" + l.file, small = full.replace(".webp", "_s.webp");
+      const im = (w > 620 && image(full)) || image(small) || image(full);
+      if (im) g.drawImage(im, toX(c.x + c.mx + l.x - l.w / 2), toY(c.y + c.my - l.y - l.h / 2), l.w * cam.z, l.h * cam.z);
+    }
+    const shade = shadeFor(c);
+    if (shade) { g.save(); g.globalAlpha = .6; g.drawImage(shade, x, y, w, h); g.restore(); }
+    g.strokeStyle = "rgba(255,255,255,.9)"; g.lineWidth = 2; g.strokeRect(x, y, w, h);
+    drawTitle(c);
+  }
+  for (const c of cells) {
+    for (const z of c.loc.zones) {
+      if (z.locked && z.lock && cam.z > .09) {
+        const lx = toX(c.x + c.mx + z.lock.x), ly = toY(c.y + c.my - z.lock.y), r = Math.max(6, 34 * cam.z);
+        g.fillStyle = "rgba(31,52,80,.82)"; g.beginPath(); g.arc(lx, ly, r * 1.5, 0, 7); g.fill();
+        g.fillStyle = "#fff"; g.fillRect(lx - r * .62, ly - r * .1, r * 1.24, r * .95);
+        g.strokeStyle = "#fff"; g.lineWidth = Math.max(1.4, r * .2); g.beginPath(); g.arc(lx, ly - r * .1, r * .42, Math.PI, 0); g.stroke();
+      }
+      for (const s of z.students) {
+        if (onlyOwned && !s.owned) continue;
+        drawBalloon(c.x + c.mx + s.x, c.y + c.my - s.y, s, !matches(s));
+      }
+    }
+  }
+}
+
+function frame() {
+  if (want) {
+    const k = 0.2;
+    cam.x += (want.x - cam.x) * k; cam.y += (want.y - cam.y) * k; cam.z += (want.z - cam.z) * k; dirty = true;
+    if (Math.abs(want.z - cam.z) < want.z * .002 && Math.abs(want.x - cam.x) * cam.z < .5) { cam = want; want = null; }
+  }
+  if (dirty) { dirty = false; draw(); }
+  requestAnimationFrame(frame);
+}
+
+function pick(mx, my) {
+  const u = cam.z * balloonScale(), half = 84 * u;
+  let found = null;
+  for (const c of cells) for (const z of c.loc.zones) for (const s of z.students) {
+    if (onlyOwned && !s.owned) continue;
+    const x = toX(c.x + c.mx + s.x), y = toY(c.y + c.my - s.y);
+    if (Math.abs(mx - x) < half && Math.abs(my - y) < half) found = {s, z, c};
+  }
+  return found;
+}
+function cellAt(mx, my) {
+  return cells.find(c => mx >= toX(c.x) && mx <= toX(c.x + c.w) && my >= toY(c.y - TITLE) && my <= toY(c.y + c.h));
+}
+
+function refreshUi() {
+  layout();
+  const all = data.locations.flatMap(l => l.zones.flatMap(z => z.students));
+  $("count").textContent = data.locations.length + " locations · " + all.length + " students";
+  const st = $("status");
+  const done = data.locations.filter(l => l.scanned).length;
+  st.textContent = data.scanned_at ? (data.stale ? "From before today's reset: " : "Scanned ") + data.scanned_at : "Maps ready, students not scanned yet";
+  st.className = data.stale ? "warn" : "";
+  $("empty").style.display = all.length ? "none" : "block";
+  $("empty").textContent = "Run a lesson scan to place the students: python -m ba_auto ctl run lesson-scan";
+  const nav = $("places"); nav.textContent = "";
+  for (const c of cells) {
+    const b = document.createElement("button"), n = c.loc.zones.reduce((a, z) => a + z.students.length, 0);
+    b.className = c.loc.scanned ? "" : "off";
+    b.append(c.loc.title);
+    const tag = document.createElement("span"); tag.textContent = c.loc.scanned ? n : "–"; b.append(tag);
+    b.onclick = () => fit({x: c.x - 60, y: c.y - TITLE, w: c.w + 120, h: c.h + TITLE + 60});
+    nav.append(b);
+  }
+  dirty = true;
+}
+
+function resize() {
+  DPR = window.devicePixelRatio || 1; W = innerWidth; H = innerHeight;
+  canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
+  canvas.style.width = W + "px"; canvas.style.height = H + "px"; dirty = true;
+}
+
+let dragging = null;
+canvas.addEventListener("pointerdown", e => { canvas.setPointerCapture(e.pointerId); dragging = {x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y}; want = null; canvas.classList.add("drag"); });
+canvas.addEventListener("pointermove", e => {
+  if (dragging) { cam.x = dragging.cx - (e.clientX - dragging.x) / cam.z; cam.y = dragging.cy - (e.clientY - dragging.y) / cam.z; dirty = true; }
+  const hit = dragging ? null : pick(e.clientX, e.clientY), tip = $("tip");
+  if ((hit && hit.s) !== (hover && hover.s)) { hover = hit; dirty = true; }
+  if (hit) {
+    tip.innerHTML = ""; tip.append(hit.s.name || "Unknown student");
+    const sm = document.createElement("small");
+    sm.textContent = hit.c.loc.title + " > " + hit.z.name + (hit.s.owned ? " · yours" + (hit.s.bond != null ? ", rank " + hit.s.bond : "") : "");
+    tip.append(sm); tip.style.display = "block";
+    tip.style.left = Math.min(W - 290, e.clientX + 14) + "px"; tip.style.top = Math.min(H - 70, e.clientY + 14) + "px";
+  } else tip.style.display = "none";
+});
+const endDrag = () => { dragging = null; canvas.classList.remove("drag"); };
+canvas.addEventListener("pointerup", endDrag); canvas.addEventListener("pointercancel", endDrag);
+canvas.addEventListener("wheel", e => {
+  e.preventDefault(); want = null;
+  const k = Math.exp(-e.deltaY * .0016), z = Math.max(.012, Math.min(1.6, cam.z * k));
+  cam.x += e.clientX / cam.z - e.clientX / z; cam.y += e.clientY / cam.z - e.clientY / z; cam.z = z; dirty = true;
+}, {passive: false});
+canvas.addEventListener("dblclick", e => { const c = cellAt(e.clientX, e.clientY); if (c) fit({x: c.x - 60, y: c.y - TITLE, w: c.w + 120, h: c.h + TITLE + 60}); });
+$("find").addEventListener("input", e => { needle = e.target.value.trim().toLowerCase(); dirty = true; });
+$("find").addEventListener("keydown", e => {
+  if (e.key !== "Enter" || !needle) return;
+  for (const c of cells) for (const z of c.loc.zones) for (const s of z.students) if (matches(s)) {
+    const x = c.x + c.mx + s.x, y = c.y + c.my - s.y; fit({x: x - 700, y: y - 450, w: 1400, h: 900}); return;
+  }
+});
+$("owned").onclick = e => { onlyOwned = !onlyOwned; e.target.setAttribute("aria-pressed", onlyOwned); dirty = true; };
+$("big").onclick = e => { bigIcons = !bigIcons; e.target.setAttribute("aria-pressed", bigIcons); dirty = true; };
+$("fit").onclick = () => fitAll(true);
+addEventListener("resize", () => { resize(); });
+
+// The page re-reads its data file, so a finished scan shows up without a reload.
+let lastGenerated = data.generated;
+setInterval(() => {
+  const s = document.createElement("script"); s.src = "atlas_data.js?t=" + Date.now();
+  s.onload = () => { s.remove(); if (window.ATLAS && window.ATLAS.generated !== lastGenerated) { lastGenerated = window.ATLAS.generated; data = window.ATLAS; refreshUi(); } };
+  s.onerror = () => s.remove();
+  document.body.append(s);
+}, 5000);
+
+resize(); refreshUi(); fitAll(false); requestAnimationFrame(frame);
+setInterval(() => { if (dirty) { dirty = false; draw(); } }, 250);   // keeps art appearing if the tab isn't animating
+</script>
+</body>
+</html>

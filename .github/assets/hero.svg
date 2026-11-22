@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 600" width="1280" height="600" role="img" aria-labelledby="t d">
+  <title id="t">BAClient</title>
+  <desc id="d">A screen-only automation client for Blue Archive on Steam, shown beside a mock of its control panel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fdff"/><stop offset=".6" stop-color="#e9f6fe"/><stop offset="1" stop-color="#eef6ff"/></linearGradient>
+    <radialGradient id="glowB" cx="92%" cy="-8%" r="62%"><stop offset="0" stop-color="#78d6ff" stop-opacity=".62"/><stop offset="1" stop-color="#78d6ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowP" cx="-4%" cy="104%" r="55%"><stop offset="0" stop-color="#ffc4e2" stop-opacity=".55"/><stop offset="1" stop-color="#ffc4e2" stop-opacity="0"/></radialGradient>
+    <pattern id="stripes" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(25)"><rect width="2" height="24" fill="#2fb0f4" opacity=".07"/></pattern>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fd5ff"/><stop offset="1" stop-color="#1f9be6"/></linearGradient>
+    <linearGradient id="primary" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#52c6fb"/><stop offset="1" stop-color="#1b9be8"/></linearGradient>
+    <linearGradient id="stop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7f92"/><stop offset="1" stop-color="#e8485c"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#2a6eaa" flood-opacity=".20"/></filter>
+    <filter id="soft" x="-10%" y="-20%" width="120%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#2a6eaa" flood-opacity=".16"/></filter>
+    <clipPath id="frame"><rect width="1280" height="600" rx="22"/></clipPath>
+    <style>
+      text { font-family: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; fill: #2b4767; }
+      .title { font-size: 92px; font-weight: 800; font-style: italic; fill: #1f3a5a; letter-spacing: -2px; }
+      .lead { font-size: 31px; font-weight: 700; fill: #1583cc; }
+      .sub { font-size: 20px; fill: #4f6b88; }
+      .pill { font-size: 15px; font-weight: 700; fill: #1f3a5a; }
+      .h { font-size: 25px; font-weight: 800; font-style: italic; fill: #1f3a5a; }
+      .small { font-size: 12px; fill: #67809c; }
+      .res { font-size: 16px; font-weight: 700; fill: #1f3a5a; }
+      .row { font-size: 15px; font-weight: 700; fill: #1f3a5a; }
+      .tag { font-size: 11.5px; font-weight: 800; }
+      .i { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="600" fill="url(#bg)"/>
+    <rect width="1280" height="600" fill="url(#stripes)"/>
+    <rect width="1280" height="600" fill="url(#glowB)"/>
+    <rect width="1280" height="600" fill="url(#glowP)"/>
+
+    <!-- brand -->
+    <g transform="translate(64 84)">
+      <rect width="84" height="84" rx="25" fill="url(#brand)" filter="url(#soft)"/>
+      <g transform="translate(42 42) rotate(-18)" fill="none" stroke="#fff" stroke-width="4">
+        <ellipse rx="30" ry="14"/><ellipse rx="16" ry="6"/>
+      </g>
+    </g>
+    <text class="title" x="60" y="268">BAClient</text>
+    <text class="lead" x="64" y="322">Your dailies, handled.</text>
+    <text class="sub" x="64" y="366">A screen-only automation client for</text>
+    <text class="sub" x="64" y="394">Blue Archive on Steam.</text>
+
+    <g transform="translate(64 436)">
+      <g filter="url(#soft)">
+        <path d="M8 0H150L142 40H0Z" fill="#fff"/>
+        <path d="M176 0H346L338 40H168Z" fill="#fff"/>
+      </g>
+      <text class="pill" x="75" y="26" text-anchor="middle">Screen-only</text>
+      <text class="pill" x="257" y="26" text-anchor="middle">No memory access</text>
+      <g filter="url(#soft)"><path d="M8 54H238L230 94H0Z" fill="#fff"/><path d="M264 54H426L418 94H256Z" fill="#fff"/></g>
+      <text class="pill" x="119" y="80" text-anchor="middle">Never spends pyroxene</text>
+      <text class="pill" x="341" y="80" text-anchor="middle">Stops on F8</text>
+    </g>
+
+    <!-- mock panel -->
+    <g transform="translate(560 54)">
+      <rect width="676" height="492" rx="24" fill="#f7fcff" stroke="#fff" stroke-width="2" filter="url(#shadow)"/>
+
+      <!-- rail -->
+      <rect x="14" y="14" width="74" height="464" rx="18" fill="#e8f6fe"/>
+      <rect x="26" y="28" width="50" height="50" rx="15" fill="url(#brand)"/>
+      <g transform="translate(51 53) rotate(-18)" fill="none" stroke="#fff" stroke-width="2.6"><ellipse rx="18" ry="8.500"/><ellipse rx="9.500" ry="3.500"/></g>
+      <rect x="24" y="96" width="54" height="50" rx="13" fill="#fff" filter="url(#soft)"/>
+      <g class="i" stroke="#1583cc" transform="translate(39 109)"><path d="M3.500 11 12 4l8.500 7"/><path d="M6 9.500V20h12V9.500"/><path d="M10 20v-5.500h4V20"/></g>
+      <g class="i" stroke="#67809c" transform="translate(39 166)"><circle cx="9" cy="8.500" r="3.500"/><path d="M3 20c.6-4 3-6 6-6s5.400 2 6 6"/><path d="M15.500 5.300a3.500 3.500 0 0 1 0 6.400"/><path d="M17.500 14.600c1.900.8 3.100 2.700 3.500 5.400"/></g>
+      <g class="i" stroke="#67809c" transform="translate(39 222)"><path d="M12 6.500C10 5 7.500 4.500 4 4.800v13.700c3.500-.3 6 .2 8 1.700 2-1.500 4.500-2 8-1.700V4.800c-3.500-.3-6 .2-8 1.700z"/><path d="M12 6.500v13.700"/></g>
+      <g class="i" stroke="#67809c" transform="translate(39 278)"><path d="M14.500 4H20v5.500L9.500 20 4 14.500z"/><path d="m7 12 5 5"/><path d="m4 20 2-2"/></g>
+      <g class="i" stroke="#67809c" transform="translate(39 334)"><rect x="4.500" y="3.500" width="15" height="17" rx="2.500"/><path d="M8.500 8.500h7M8.500 12.500h7M8.500 16.500h4"/></g>
+
+      <!-- top -->
+      <text class="h" x="110" y="52">Home</text>
+      <circle cx="115" cy="72" r="4.500" fill="#2fb0f4"/>
+      <text class="small" x="126" y="76">Running: Clear group stories</text>
+
+      <g transform="translate(330 22)">
+        <g filter="url(#soft)"><path d="M8 0H98L90 40H0Z" fill="#fff"/><path d="M116 0H208L200 40H108Z" fill="#fff"/></g>
+        <g class="i" stroke="#36c55f" transform="translate(11 9) scale(.9)"><path d="M13.500 2.500 5 13.500h6l-1 8 9-11.500h-6.500z"/></g>
+        <text class="res" x="36" y="26">120</text>
+        <g class="i" stroke="#2fb0f4" transform="translate(119 9) scale(.9)"><path d="M7 4h10l4 5.500L12 20.500 3 9.500z"/><path d="M3 9.500h18"/></g>
+        <text class="res" x="146" y="26">2,400</text>
+      </g>
+      <g transform="translate(556 22)">
+        <path d="M8 0H104L96 40H0Z" fill="url(#stop)" filter="url(#soft)"/>
+        <text x="34" y="26" style="font-size:15px;font-weight:800;fill:#fff">Stop</text>
+        <rect x="70" y="11" width="23" height="18" rx="4" fill="#fff" fill-opacity=".3"/>
+        <text x="81.500" y="24.500" text-anchor="middle" style="font-size:10.500px;font-weight:800;fill:#fff">F8</text>
+      </g>
+
+      <!-- now running -->
+      <g transform="translate(106 100)">
+        <rect width="548" height="104" rx="16" fill="url(#primary)"/>
+        <path d="M410 0H532a16 16 0 0 1 16 16v72a16 16 0 0 1-16 16H372Z" fill="#fff" fill-opacity=".12"/>
+        <text x="22" y="34" style="font-size:12.500px;font-weight:800;fill:#dff4ff">NOW RUNNING</text>
+        <text x="22" y="63" style="font-size:23px;font-weight:800;font-style:italic;fill:#fff">Clear group stories</text>
+        <rect x="22" y="78" width="504" height="8" rx="4" fill="#fff" fill-opacity=".32"/>
+        <rect x="22" y="78" width="334" height="8" rx="4" fill="#fff"/>
+        <text x="526" y="63" text-anchor="end" style="font-size:18px;font-weight:800;fill:#fff">4 of 6</text>
+      </g>
+
+      <!-- tasks -->
+      <g transform="translate(106 220)">
+        <g filter="url(#soft)">
+          <rect width="548" height="54" rx="13" fill="#fff"/>
+          <rect y="64" width="548" height="54" rx="13" fill="#fff"/>
+          <rect y="128" width="548" height="54" rx="13" fill="#fff"/>
+          <rect y="192" width="548" height="54" rx="13" fill="#fff"/>
+        </g>
+        <circle cx="30" cy="27" r="15" fill="#e4f8f0"/><path d="m23 27 5 5 9-10" fill="none" stroke="#2fc08b" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="row" x="58" y="32">Clear mini stories</text>
+        <rect x="462" y="15" width="66" height="24" rx="12" fill="#e4f8f0"/><text class="tag" x="495" y="31" text-anchor="middle" style="fill:#16976a">DONE</text>
+
+        <circle cx="30" cy="91" r="15" fill="#e4f8f0"/><path d="m23 91 5 5 9-10" fill="none" stroke="#2fc08b" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="row" x="58" y="96">Daily scan</text>
+        <rect x="462" y="79" width="66" height="24" rx="12" fill="#e4f8f0"/><text class="tag" x="495" y="95" text-anchor="middle" style="fill:#16976a">DONE</text>
+
+        <circle cx="30" cy="155" r="15" fill="#e8f6fe"/><path d="M24 149h12M24 155h12M24 161h8" fill="none" stroke="#1583cc" stroke-width="2.300" stroke-linecap="round"/>
+        <text class="row" x="58" y="160">Claim mail and tasks</text>
+        <rect x="444" y="143" width="84" height="24" rx="12" fill="#e8f6fe"/><text class="tag" x="486" y="159" text-anchor="middle" style="fill:#1583cc">PREVIEW</text>
+
+        <circle cx="30" cy="219" r="15" fill="#fff5dc"/><path d="m30 209 3 6.300 7 1-5 4.900 1.200 6.800-6.200-3.300-6.200 3.300 1.200-6.800-5-4.900 7-1z" fill="#ffbe2e"/>
+        <text class="row" x="58" y="224">Plan lessons</text>
+        <rect x="462" y="207" width="66" height="24" rx="12" fill="#fff5dc"/><text class="tag" x="495" y="223" text-anchor="middle" style="fill:#a87400">READY</text>
+      </g>
+    </g>
+  </g>
+</svg>

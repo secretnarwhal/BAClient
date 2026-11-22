@@ -1,0 +1,72 @@
+{
+  "lobby_cash": {
+    "file": "lobby_cash.png",
+    "region": [
+      126,
+      352,
+      284,
+      440
+    ],
+    "threshold": 0.85
+  },
+  "general_off": {
+    "file": "general_off.png",
+    "region": [
+      33,
+      425,
+      265,
+      527
+    ],
+    "threshold": 0.88
+  },
+  "general_on": {
+    "file": "general_on.png",
+    "region": [
+      33,
+      425,
+      265,
+      527
+    ],
+    "threshold": 0.88
+  },
+  "daily_on": {
+    "file": "daily_on.png",
+    "region": [
+      1268,
+      106,
+      1402,
+      194
+    ],
+    "threshold": 0.88
+  },
+  "weekly_off": {
+    "file": "weekly_off.png",
+    "region": [
+      1473,
+      106,
+      1637,
+      194
+    ],
+    "threshold": 0.88
+  },
+  "monthly_off": {
+    "file": "monthly_off.png",
+    "region": [
+      1693,
+      106,
+      1862,
+      194
+    ],
+    "threshold": 0.88
+  },
+  "card_title": {
+    "file": "card_title.png",
+    "region": [
+      415,
+      500,
+      740,
+      605
+    ],
+    "threshold": 0.85
+  }
+}
